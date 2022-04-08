@@ -8,14 +8,82 @@ body * {
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #ede2db;
+    background-color: #e9f0f8;
 }
 
 .app {
-    min-width: 100vw;
+    min-width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    .app-header {
+        width: 100vw;
+        text-align: left;
+        background-color: rgba(255, 255, 255, 0.573);
+        box-shadow: 0px 5px 11px -5px rgba(0,0,0,0.56);
+        h1 {
+            color: rgb(42, 116, 196);
+            text-shadow: -6px 1px 3px rgb(185, 219, 254);
+            padding: 20px 20px 20px 60px;
+            text-transform: uppercase;
+            font-size: 40px;
+        }
+    }
+    .app-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 100%;
+        width: 100%;
+        .create {
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            // border: 3px solid rgb(108, 160, 79);
+            border-radius: 10px;
+            background-color: #f2f9e9;
+            box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.10);
+            // .header {
+            //     background-color: rgba(184, 205, 88, 0.573);
+            //     border-top-left-radius: 10px;
+            //     border-top-right-radius: 10px;
+            //     h2 {
+            //         display: flex;
+            //         flex-direction: column;
+            //         justify-content: center;
+            //         align-items: center;
+            //         width: 100%;
+            //         padding: 5px;
+            //         border-bottom: 4px solid rgba(243, 243, 243, 0.437);
+            //         box-shadow: 0px 10px 11px -5px rgba(0,0,0,0.15);
+            //         color: rgb(243, 243, 243);
+            //         letter-spacing: 2px;
+            //     }
+            // }
+        }
+        .img {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+            background-image: url(./Img/okai-vehicles-vNuRh8jOtXA-unsplash.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 30vw;
+            height: 100vh;
+            z-index: -1;
+        }
+    }
+    .app-footer {
+        min-height: 50px;
+        min-width: 100vw;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.573);
+        box-shadow: 0px -5px 11px -5px rgba(0,0,0,0.56);
+    }
 }
