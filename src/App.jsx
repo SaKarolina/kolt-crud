@@ -1,6 +1,7 @@
 // import { useEffect, useState } from 'react';
 // import getNewId from './Common/id'
 import './App.css';
+import Create from './Components/Create';
 import './crud.scss';
 
 function App() {
@@ -37,11 +38,18 @@ function App() {
       </header>
 
       <div className='app-container'>
-        <div className='create'>nnn</div>
+        <div className='content'>
+          <Create></Create>
+          <div className='create'>sort</div>
+          <div className='create'>list</div>
+          <div className='create'>statistic</div>
+        </div>
         <div className='img'></div>
       </div>
 
-      <footer className='app-footer'></footer>
+      <footer className='app-footer'>
+        FB INST TW
+      </footer>
     </div>
   );
 }
