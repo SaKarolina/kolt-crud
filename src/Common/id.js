@@ -1,11 +1,11 @@
 export default function getNewId () {
-    let id = localStorage.getItem('db_id');
+    let id = localStorage.getItem('id');
     if (null === id) {
-        localStorage.setItem('db_id', 1);
+        localStorage.setItem('id', 1);
         return 1;
     }
     id = parseInt(id);
     id++;
-    localStorage.setItem('db_id', id);
+    localStorage.setItem('id', id);
     return id;
 }

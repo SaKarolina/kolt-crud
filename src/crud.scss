@@ -55,7 +55,8 @@ body {
             padding: 0 20px;
             width: 70vw;
             gap: 20px;
-            .create {
+            .create,
+            .read {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -75,7 +76,8 @@ body {
                         color: #676570;
                     }
                 }
-                .form {
+                .form,
+                .list {
                     display: flex;
                     flex-direction: row;
                     flex-wrap: wrap;
@@ -105,6 +107,9 @@ body {
                         height: 25px;
                         letter-spacing: 1px;
                         padding: 2px;
+                    }
+                    #form-checkbox {
+                        // display: none;
                     }
                     .button {
                         background-color: #E0E9E6;
