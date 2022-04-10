@@ -16,6 +16,10 @@ function Create ({create}) {
             isBusy: isBusy
         }
         create(data);  //i create metoda paduodam data
+        setRegnumb(rand(10000000, 99999999));
+        setDate('');
+        setDistance('');
+        setIsBusy(1);
     }
 
     const handleInput = (e, d) => {

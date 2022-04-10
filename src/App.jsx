@@ -4,10 +4,12 @@ import './App.css';
 import Create from './Components/Create';
 import Read from './Components/Read';
 import './crud.scss';
+import Edit from './Components/Edit';
 
 function App() {
 
   const [kolt, setKolt] = useState([]);
+  const [modal, setModal] = useState(0); // 0 nera
 
   useEffect (() => {
     let data = localStorage.getItem('kolt')
@@ -58,6 +60,10 @@ function App() {
       <footer className='app-footer'>
         FB INST TW
       </footer>
+
+      {
+        modal ? <Edit></Edit> : null
+      }
     </div>
   );
 }
