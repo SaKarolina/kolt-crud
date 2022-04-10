@@ -19,7 +19,7 @@ function App() {
     }
   }, []);
 
-  const create = (data) => {
+  const create = data => {
     const scooter = {
       id: getNewId(),
       regNumb: data.regNumb,
@@ -32,6 +32,13 @@ function App() {
     setKolt(kolt => [...kolt, scooter]);
   }
 
+  const deleteScooter = id => {
+    const newData = kolt.filter(sc => sc.id !== id);
+        localStorage.setItem('kolt', JSON.stringify(newData));
+
+        setKolt(kolt => kolt.filter(sc => sc.id !== id));
+  }
+
   return (
     <div className='app'>
       <header className='app-header'>
@@ -42,7 +49,7 @@ function App() {
         <div className='content'>
           <Create create={create}></Create>
           <div className='create'>sort</div>
-          <Read kolt={kolt}></Read>
+          <Read kolt={kolt} deleteScooter={deleteScooter}></Read>
           <div className='create'>statistic</div>
         </div>
         <div className='img'></div>

@@ -1,6 +1,6 @@
 import Scooter from "./Scooter";
 
-function Read ({kolt}) {
+function Read ({kolt, deleteScooter}) {
 
     return (
         <div className="read">
@@ -10,7 +10,7 @@ function Read ({kolt}) {
             <div className="list">
                 <ul>
                     {
-                        kolt.map(k => <Scooter key={k.id} scooter={k}></Scooter>)
+                        kolt.map(k => <Scooter key={k.id} scooter={k} deleteScooter={deleteScooter}></Scooter>)
                     }
                 </ul>
             </div>
