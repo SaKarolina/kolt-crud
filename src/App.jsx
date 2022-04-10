@@ -101,7 +101,7 @@ function App() {
       </div>
 
       <footer className='app-footer'>
-        FB INST TW
+        
       </footer>
 
       {

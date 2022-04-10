@@ -8,7 +8,7 @@ function Scooter ({scooter, deleteScooter, show}) {
         <li className="row">
             <div className="item">
                 {
-                    scooter.isBusy ? <div className="isBusy" style={{background: `green`}}>Free</div> : <div className="isBusy" style={{background: `red`}}>Busy</div>
+                    scooter.isBusy ? <div className="isBusy" style={{background: `#2EAA76`}}>Free</div> : <div className="isBusy" style={{background: `#B7AC54`}}>Busy</div>
                 }
                 
                 <div className="item-row">Reg. numb.: <span style={{color: `#7d908adb`}}>{scooter.regNumb}</span></div>

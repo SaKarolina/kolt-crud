@@ -24,12 +24,21 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background-image: url(./Img/okai-vehicles-vNuRh8jOtXA-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     .app-header {
         width: 100%;
         text-align: left;
-        background-color: rgba(255, 255, 255, 0.573);
+        background-color: #bbd1d2ec;
+        background: #CDE5E6;
+        background: -moz-linear-gradient(left, #cde5e681 0%, #BBD1D2 50%, #94A5A6 100%);
+        background: -webkit-linear-gradient(left, #cde5e6c3 0%, #BBD1D2 50%, #94A5A6 100%);
+        background: linear-gradient(to right, #cde5e67c 0%, #bbd1d2da 50%, #8ebbdae8 100%);
         box-shadow: 0px 5px 11px -5px rgba(0,0,0,0.56);
         h1 {
+            width: 200px;
             color: #35484C;
             background: #bbd1d2;
             text-shadow: 3px 2px 3px rgba(255, 255, 255, 0.467);
@@ -43,8 +52,8 @@ body {
     .app-container {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
         height: 100%;
         width: 100%;
         .content {
@@ -68,7 +77,7 @@ body {
                 flex-direction: column;
                 justify-content: center;
                 border-radius: 5px;
-                background-color: #ffffff;
+                background-color: #fffffff6;
                 box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.10);
                 .top {
                     background-color: #EDEEF3;
@@ -215,22 +224,22 @@ body {
                 }
             }
         }
-        .img {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: stretch;
-            background-image: url(./Img/okai-vehicles-vNuRh8jOtXA-unsplash.jpg);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            width: 30vw;
-            height: 100vh;
-            z-index: -1;
-            @media (max-width: 510px) {
-                display: none;
-            }
-        }
+        // .img {
+        //     display: flex;
+        //     flex-direction: column;
+        //     justify-content: center;
+        //     align-items: stretch;
+        //     background-image: url(./Img/okai-vehicles-vNuRh8jOtXA-unsplash.jpg);
+        //     background-size: cover;
+        //     background-position: center;
+        //     background-repeat: no-repeat;
+        //     width: 30vw;
+        //     height: 100vh;
+        //     z-index: -1;
+        //     @media (max-width: 510px) {
+        //         display: none;
+        //     }
+        // }
     }
     .app-footer {
         margin-top: 20px;
