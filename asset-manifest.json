@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/kolt-crud/static/css/main.09750f08.css",
-    "main.js": "/kolt-crud/static/js/main.aa002e15.js",
+    "main.css": "/kolt-crud/static/css/main.96c05541.css",
+    "main.js": "/kolt-crud/static/js/main.b099d940.js",
     "static/js/787.ad4f4dcc.chunk.js": "/kolt-crud/static/js/787.ad4f4dcc.chunk.js",
     "static/media/okai-vehicles-vNuRh8jOtXA-unsplash.jpg": "/kolt-crud/static/media/okai-vehicles-vNuRh8jOtXA-unsplash.37d74711e352b60b26bd.jpg",
     "index.html": "/kolt-crud/index.html",
-    "main.09750f08.css.map": "/kolt-crud/static/css/main.09750f08.css.map",
-    "main.aa002e15.js.map": "/kolt-crud/static/js/main.aa002e15.js.map",
+    "main.96c05541.css.map": "/kolt-crud/static/css/main.96c05541.css.map",
+    "main.b099d940.js.map": "/kolt-crud/static/js/main.b099d940.js.map",
     "787.ad4f4dcc.chunk.js.map": "/kolt-crud/static/js/787.ad4f4dcc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.09750f08.css",
-    "static/js/main.aa002e15.js"
+    "static/css/main.96c05541.css",
+    "static/js/main.b099d940.js"
   ]
 }
