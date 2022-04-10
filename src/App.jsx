@@ -5,6 +5,7 @@ import Read from './Components/Read';
 import './crud.scss';
 import Edit from './Components/Edit';
 import getNewId from './Common/id';
+import Statistics from './Components/Statistics';
 
 function App() {
 
@@ -39,7 +40,9 @@ function App() {
       regNumb: data.regNumb,
       isBusy: data.isBusy,
       date: data.date,
-      distance: data.distance
+      newDate: data.newDate, //!!!!!!!!!
+      distance: data.distance,
+      newDistance: data.newDistance //!!!!!!!!!
     }
     const newData = [...kolt, scooter];
     localStorage.setItem('kolt', JSON.stringify(newData));
@@ -53,6 +56,8 @@ function App() {
         koltCopy[i].isBusy = data.isBusy;
         koltCopy[i].date = data.date;
         koltCopy[i].distance = data.distance;
+        koltCopy[i].newDate = data.newDate;  //!!!!!!!!!
+        koltCopy[i].newDistance = data.newDistance;  //!!!!!!!!!
       }
     });
     localStorage.setItem('kolt', JSON.stringify(koltCopy));
@@ -63,6 +68,8 @@ function App() {
           e[i].isBusy = data.isBusy;
           e[i].date = data.date;
           e[i].distance = data.distance;
+          e[i].newDate = data.newDate;  //!!!!!!!!!
+          e[i].newDistance = data.newDistance;  //!!!!!!!!!
         }
       });
       return e;
@@ -88,7 +95,7 @@ function App() {
           <Create create={create}></Create>
           <div className='create'>sort</div>
           <Read kolt={kolt} deleteScooter={deleteScooter} show={show}></Read>
-          <div className='create'>statistic</div>
+          <Statistics kolt={kolt}></Statistics>
         </div>
         <div className='img'></div>
       </div>

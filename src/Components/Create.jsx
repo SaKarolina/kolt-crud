@@ -5,7 +5,7 @@ function Create ({create}) {
 
     const [regNumb, setRegnumb] = useState(rand(10000000, 99999999));
     const [date, setDate] = useState('');
-    const [distance, setDistance] = useState('');
+    const [distance, setDistance] = useState(0);
     const [isBusy, setIsBusy] = useState(1); //1 laisvas 0 busy
     
     const handleCreate = () => {
@@ -18,7 +18,7 @@ function Create ({create}) {
         create(data);  //i create metoda paduodam data
         setRegnumb(rand(10000000, 99999999));
         setDate('');
-        setDistance('');
+        setDistance(0);
         setIsBusy(1);
     }
 
@@ -58,7 +58,7 @@ function Create ({create}) {
 
                 <div className="input">
                     <label htmlFor="distance">Distance (km):</label>
-                    <input type="number" name="distance" value={distance} onChange={(e) => handleInput(e, 'distance')}></input>
+                    <input type="number" name="distance" min="0" value={distance} onChange={(e) => handleInput(e, 'distance')}></input>
                 </div>
 
                 <div className="input">

@@ -5,14 +5,18 @@ function Edit ({edit, scooter, cancel}) {
 
     const [regNumb, setRegnumb] = useState(rand(10000000, 99999999));
     const [date, setDate] = useState('');
-    const [distance, setDistance] = useState('');
+    const [distance, setDistance] = useState(0);
     const [isBusy, setIsBusy] = useState(1); //1 laisvas 0 busy
+    const [newDate, setNewDate] = useState(''); //!!!!!!!!!
+    const [newDistance, setNewDistance] = useState(0); //!!!!!!!!!
 
     useEffect(() => {
         setRegnumb(scooter.regNumb);
         setDate(scooter.date);
         setDistance(scooter.distance);
         setIsBusy(scooter.isBusy);
+        setNewDate(scooter.newDate); //!!!!!!!!!
+        setNewDistance(scooter.newDistance); //!!!!!!!!!
     }, [scooter]);
     
     const handleCancel = () => {
@@ -23,7 +27,9 @@ function Edit ({edit, scooter, cancel}) {
         const data = {
             regNumb: regNumb,
             date: date,
+            newDate: newDate,  //!!!!!!!!!
             distance: distance,
+            newDistance: newDistance, //!!!!!!!
             isBusy: isBusy
         }
         edit(data);
@@ -38,8 +44,14 @@ function Edit ({edit, scooter, cancel}) {
             case 'date':
                 setDate(e.target.value);
                 break;
+            case 'newDate':  
+                setNewDate(e.target.value);  //!!!!!!!!!
+                break;
             case 'distance':
                 setDistance(e.target.value);
+                break;
+                case 'newDistance':
+                setNewDistance(e.target.value); //!!!!!!!!!
                 break;
             case 'isBusy':
                 setIsBusy(i => i === 0 ? 1 : 0);
@@ -61,13 +73,23 @@ function Edit ({edit, scooter, cancel}) {
                     </div>
 
                     <div className="input">
-                        <label htmlFor="date">Date:</label>
-                        <input type="date" name="date" value={date} onChange={(e) => handleInput(e, 'date')}></input>
+                        <label htmlFor="date">Last use date:</label>
+                        <input type="date" name="date" value={date} onChange={(e) => handleInput(e, 'date')} disabled></input>
                     </div>
 
                     <div className="input">
-                        <label htmlFor="distance">Distance (km):</label>
-                        <input type="number" name="distance" value={distance} onChange={(e) => handleInput(e, 'distance')}></input>
+                        <label htmlFor="newDate">New date:</label>
+                        <input type="date" name="newDate" value={newDate} onChange={(e) => handleInput(e, 'newDate')}></input>
+                    </div>
+
+                    <div className="input">
+                        <label htmlFor="distance">Total distance (km):</label>
+                        <input type="number" name="distance" value={distance} onChange={(e) => handleInput(e, 'distance')} disabled></input>
+                    </div>
+
+                    <div className="input">
+                        <label htmlFor="newDistance">New distance (km):</label>
+                        <input type="number" name="newDistance" value={newDistance} onChange={(e) => handleInput(e, 'newDistance')}></input>
                     </div>
 
                     <div className="buttons">
