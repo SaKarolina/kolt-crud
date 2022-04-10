@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import getNewId from './Common/id';
 import './App.css';
 import Create from './Components/Create';
 import Read from './Components/Read';
 import './crud.scss';
 import Edit from './Components/Edit';
+import getNewId from './Common/id';
 
 function App() {
 
@@ -21,17 +21,53 @@ function App() {
     }
   }, []);
 
+  const cancel = () => {
+    setModal(0);
+  }
+
+  const show = id => {
+    setModal(id);
+  }
+
+  const getScooterById = () => {
+    return kolt.filter(sc => sc.id === modal)[0];
+  }
+
   const create = data => {
     const scooter = {
       id: getNewId(),
       regNumb: data.regNumb,
       isBusy: data.isBusy,
       date: data.date,
-      distance: data.distance,
+      distance: data.distance
     }
     const newData = [...kolt, scooter];
     localStorage.setItem('kolt', JSON.stringify(newData));
     setKolt(kolt => [...kolt, scooter]);
+  }
+
+  const edit = data => {
+    const koltCopy = [...kolt];
+    koltCopy.forEach((el, i) => {
+      if(el.id === modal) {
+        koltCopy[i].isBusy = data.isBusy;
+        koltCopy[i].date = data.date;
+        koltCopy[i].distance = data.distance;
+      }
+    });
+    localStorage.setItem('kolt', JSON.stringify(koltCopy));
+
+    setKolt(e => {
+      e.forEach((el, i) => {
+        if(el.id === modal) {
+          e[i].isBusy = data.isBusy;
+          e[i].date = data.date;
+          e[i].distance = data.distance;
+        }
+      });
+      return e;
+    });
+    cancel();
   }
 
   const deleteScooter = id => {
@@ -51,7 +87,7 @@ function App() {
         <div className='content'>
           <Create create={create}></Create>
           <div className='create'>sort</div>
-          <Read kolt={kolt} deleteScooter={deleteScooter}></Read>
+          <Read kolt={kolt} deleteScooter={deleteScooter} show={show}></Read>
           <div className='create'>statistic</div>
         </div>
         <div className='img'></div>
@@ -62,7 +98,7 @@ function App() {
       </footer>
 
       {
-        modal ? <Edit></Edit> : null
+        modal ? <Edit edit={edit} scooter={getScooterById()} cancel={cancel}></Edit> : null
       }
     </div>
   );

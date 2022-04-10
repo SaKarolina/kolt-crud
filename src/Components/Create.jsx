@@ -62,7 +62,7 @@ function Create ({create}) {
                 </div>
 
                 <div className="input">
-                    <input type="checkbox" name="" id="form-checkbox" checked={isBusy} onChange={(e) => handleInput(e, 'isBusy')}></input>
+                    <input type="checkbox" name="" id="form-checkbox" checked={!isBusy} onChange={(e) => handleInput(e, 'isBusy')}></input>
                     <button className="button" onClick={handleCreate}>Add</button>
                 </div>
             </div>

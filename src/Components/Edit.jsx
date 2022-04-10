@@ -1,13 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import rand from '../Common/rand';
 
-function Edit ({edit, scooter}) {
+function Edit ({edit, scooter, cancel}) {
 
     const [regNumb, setRegnumb] = useState(rand(10000000, 99999999));
     const [date, setDate] = useState('');
     const [distance, setDistance] = useState('');
     const [isBusy, setIsBusy] = useState(1); //1 laisvas 0 busy
+
+    useEffect(() => {
+        setRegnumb(scooter.regNumb);
+        setDate(scooter.date);
+        setDistance(scooter.distance);
+        setIsBusy(scooter.isBusy);
+    }, [scooter]);
     
+    const handleCancel = () => {
+        cancel();
+    }
+
     const handleEdit = () => {
         const data = {
             regNumb: regNumb,
@@ -15,12 +26,9 @@ function Edit ({edit, scooter}) {
             distance: distance,
             isBusy: isBusy
         }
-        edit(data);  //i create metoda paduodam data
-        setRegnumb(rand(10000000, 99999999));
-        setDate('');
-        setDistance('');
-        setIsBusy(1);
+        edit(data);
     }
+
 
     const handleInput = (e, d) => {
         switch(d) {
@@ -62,9 +70,10 @@ function Edit ({edit, scooter}) {
                         <input type="number" name="distance" value={distance} onChange={(e) => handleInput(e, 'distance')}></input>
                     </div>
 
-                    <div className="input">
-                        <input type="checkbox" name="" id="form-checkbox" checked={isBusy} onChange={(e) => handleInput(e, 'isBusy')}></input>
-                        <button className="button" onClick={handleEdit}>Save</button>
+                    <div className="buttons">
+                        <input className="isBusy" type="checkbox" name="" id="form-checkbox" checked={!isBusy} onChange={(e) => handleInput(e, 'isBusy')}></input>
+                        <button className="btnScooter" onClick={handleEdit}>Save</button>
+                        <button className="btnScooter" onClick={handleCancel}>Cancel</button>
                     </div>
                 </div>
             </div>

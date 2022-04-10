@@ -56,8 +56,12 @@ body {
             padding: 0 20px;
             width: 70vw;
             gap: 20px;
+            @media (max-width: 510px) {
+                width: 100vw;
+            }
             .create,
             .read {
+                width: 100%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -133,16 +137,21 @@ body {
                     }
                 }
                 ul {
+                    min-width: 100%;
                     .row {
                         display: flex;
                         flex-direction: row;
                         flex-wrap: wrap;
-                        justify-content: center;
+                        justify-content: space-between;
                         padding: 20px 10px;
                         gap: 40px;
                         border-bottom: 2px solid #d4d0e3;
                         list-style: none;
+                        @media (max-width: 1194px) {
+                            justify-content: space-around; 
+                        }
                         .item {
+                            width: 280px;
                             display: flex;
                             flex-direction: column;
                             flex-wrap: wrap;
@@ -156,23 +165,28 @@ body {
                                 flex-direction: row;
                                 flex-wrap: wrap;
                                 justify-content: space-between;
-                                gap: 20px;
+                                gap: 10px;
                                 color: #5a5862;
                             }
+                        }
+                        .isBusy {
+                            color: #f2efef;
+                            text-align: center;
+                            font-size: 12px;
+                            line-height: 1.8em;
+                            letter-spacing: 1px;
+                            width: fit-content;
+                            height: 32px;
+                            padding: 5px 20px;
+                            border-radius: 20px;
                         }
                         .buttons {
                             display: flex;
                             flex-direction: column;
                             justify-content: center;
                             gap: 10px;
-                            @media (max-width: 724px) {
+                            @media (max-width: 1194px) {
                                 flex-direction: row; 
-                            }
-                            .isBusy {
-                                
-                                width: 20px;
-                                height: 20px;
-                                border-radius: 50%;
                             }
                             .btnScooter {
                                 background-color: #E0E9E6;
@@ -210,6 +224,9 @@ body {
             width: 30vw;
             height: 100vh;
             z-index: -1;
+            @media (max-width: 510px) {
+                display: none;
+            }
         }
     }
     .app-footer {
@@ -287,28 +304,39 @@ body {
                     letter-spacing: 1px;
                     padding: 2px;
                 }
-                #form-checkbox {
-                    display: none;
+                .buttons {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    gap: 10px;
+                    @media (max-width: 724px) {
+                        flex-direction: row; 
+                    }
+                    .isBusy {
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                    }
+                    .btnScooter {
+                        background-color: #E0E9E6;
+                        border: 1px solid #c4d6d0a2;
+                        box-shadow: 0px 0px 4px -2px rgba(0,0,0,0.48);
+                        border-radius: 5px;
+                        padding: 10px 15px;
+                        min-height: 40px;
+                        min-width: fit-content;
+                        text-align: center;
+                        font-family: 'Michroma', sans-serif;
+                        color: #5a5862;
+                        letter-spacing: 1px;
+                        font-weight: bold;
+                    }
+                    .btnScooter:hover {
+                        background-color: #bbd1d2;
+                        transition: 0.5s;
+                        cursor: pointer;
+                    }
                 }
-                .button {
-                    background-color: #E0E9E6;
-                    border: 1px solid #c4d6d0a2;
-                    box-shadow: 0px 0px 4px -2px rgba(0,0,0,0.48);
-                    border-radius: 5px;
-                    padding: 10px 15px;
-                    min-height: 40px;
-                    max-width: 80px;
-                    text-align: center;
-                    font-family: 'Michroma', sans-serif;
-                    color: #5a5862;
-                    letter-spacing: 1px;
-                    font-weight: bold;
-                }
-                .button:hover {
-                    background-color: #bbd1d2;
-                    transition: 0.5s;
-                    cursor: pointer;
-                }    
             }
         }
     }
