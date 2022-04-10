@@ -4,21 +4,25 @@ import rand from '../Common/rand';
 function Create ({create}) {
 
     const [regNumb, setRegnumb] = useState(rand(10000000, 99999999));
-    const [date, setDate] = useState();
-    const [distance, setDistance] = useState();
-    const [isBusy, setIsBusy] = useState(0); //0 laisvas 1 busy
+    const [date, setDate] = useState('');
+    const [distance, setDistance] = useState('');
+    const [isBusy, setIsBusy] = useState(1); //1 laisvas 0 busy
     
     const handleCreate = () => {
         const data = {
+            regNumb: regNumb,
             date: date,
             distance: distance,
             isBusy: isBusy
         }
-        create(data);
+        create(data);  //i create metoda paduodam data
     }
 
     const handleInput = (e, d) => {
         switch(d) {
+            case 'regNumb':
+                setRegnumb (e.target.value);
+                break;
             case 'date':
                 setDate(e.target.value);
                 break;
@@ -26,7 +30,7 @@ function Create ({create}) {
                 setDistance(e.target.value);
                 break;
             case 'isBusy':
-                setIsBusy(i => !i);
+                setIsBusy(i => i === 0 ? 1 : 0);
                 break;
             default:
         }
@@ -40,7 +44,7 @@ function Create ({create}) {
             <div className="form">
                 <div className="input">
                     <label htmlFor="registration">Reg. numb.:</label>
-                    <input type="text" name="registration"></input>
+                    <input type="text" name="registration" value={regNumb} onChange={(e) => handleInput(e, 'regNumb')} disabled></input>
                 </div>
 
                 <div className="input">
@@ -54,7 +58,7 @@ function Create ({create}) {
                 </div>
 
                 <div className="input">
-                    <input type="checkbox" name="" id="form-checkbox" onChange={(e) => handleInput(e, 'isBusy')}></input>
+                    <input type="checkbox" name="" id="form-checkbox" checked={isBusy} onChange={(e) => handleInput(e, 'isBusy')}></input>
                     <button className="button" onClick={handleCreate}>Add</button>
                 </div>
             </div>

@@ -1,3 +1,5 @@
+import Scooter from "./Scooter";
+
 function Read ({kolt}) {
 
     return (
@@ -8,7 +10,7 @@ function Read ({kolt}) {
             <div className="list">
                 <ul>
                     {
-                        kolt.map(k => <li key={k.id}></li>)
+                        kolt.map(k => <Scooter key={k.id} scooter={k}></Scooter>)
                     }
                 </ul>
             </div>

@@ -22,10 +22,10 @@ function App() {
   const create = (data) => {
     const scooter = {
       id: getNewId(),
-      registrationCode: data.registrationCode,
+      regNumb: data.regNumb,
       isBusy: data.isBusy,
-      lastUseTime: data.lastUseTime,
-      totalRideKilometres: data.totalRideKilometres,
+      date: data.date,
+      distance: data.distance,
     }
     const newData = [...kolt, scooter];
     localStorage.setItem('kolt', JSON.stringify(newData));
@@ -56,9 +56,3 @@ function App() {
 }
 
 export default App;
-
-//  id: getNewId(),
-//registrationCode: rand(10000000, 99999999),
-//isBusy: 1,
-//lastUseTime: '',
-//totalRideKilometres: '',

@@ -109,7 +109,7 @@ body {
                         padding: 2px;
                     }
                     #form-checkbox {
-                        // display: none;
+                        display: none;
                     }
                     .button {
                         background-color: #E0E9E6;
@@ -129,6 +129,11 @@ body {
                         background-color: #bbd1d2;
                         transition: 0.5s;
                         cursor: pointer;
+                    }
+                }
+                ul {
+                    li {
+                        list-style: none;
                     }
                 }
             }
