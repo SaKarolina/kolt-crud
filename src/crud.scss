@@ -291,6 +291,7 @@ body {
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
+                align-items: center;
                 padding: 15px;
                 font-size: 12px;
                 letter-spacing: 1px;
@@ -298,6 +299,10 @@ body {
                 gap: 20px;
                 font-weight: bold;
                 color: #5a5862;
+                @media (max-width: 660px) {
+                    flex-direction: column;
+                    align-items: stretch;
+                }
                 .input {
                     display: flex;
                     flex-direction: column;
@@ -306,7 +311,8 @@ body {
                 }
                 input[type="text"],
                 input[type="date"],
-                input[type="number"] {
+                input[type="number"],
+                input[type="checkbox"] {
                     border: 1px solid #b9b5c8;
                     border-radius: 5px;
                     font-family: 'Michroma', sans-serif;
@@ -316,6 +322,10 @@ body {
                     height: 25px;
                     letter-spacing: 1px;
                     padding: 2px;
+                }
+                input[type="checkbox"] {
+                    width: 25px;
+                    height: 25px;
                 }
                 .buttons {
                     display: flex;

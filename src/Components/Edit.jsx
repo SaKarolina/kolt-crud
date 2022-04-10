@@ -68,6 +68,9 @@ function Edit ({edit, scooter, cancel}) {
                 </div>
                 <div className="form">
                     <div className="input">
+                        <label htmlFor="isBusy">Is busy: </label>
+                        <input className="isBusy" type="checkbox" name="isBusy" id="form-checkbox" checked={!isBusy} onChange={(e) => handleInput(e, 'isBusy')}></input>
+
                         <label htmlFor="registration">Reg. numb.:</label>
                         <input type="text" name="registration" value={regNumb} onChange={(e) => handleInput(e, 'regNumb')} disabled></input>
                     </div>
@@ -75,9 +78,7 @@ function Edit ({edit, scooter, cancel}) {
                     <div className="input">
                         <label htmlFor="date">Last use date:</label>
                         <input type="date" name="date" value={date} onChange={(e) => handleInput(e, 'date')} disabled></input>
-                    </div>
 
-                    <div className="input">
                         <label htmlFor="newDate">New date:</label>
                         <input type="date" name="newDate" value={newDate} onChange={(e) => handleInput(e, 'newDate')}></input>
                     </div>
@@ -85,15 +86,12 @@ function Edit ({edit, scooter, cancel}) {
                     <div className="input">
                         <label htmlFor="distance">Total distance (km):</label>
                         <input type="number" name="distance" value={distance} onChange={(e) => handleInput(e, 'distance')} disabled></input>
-                    </div>
 
-                    <div className="input">
                         <label htmlFor="newDistance">New distance (km):</label>
                         <input type="number" name="newDistance" value={newDistance} onChange={(e) => handleInput(e, 'newDistance')}></input>
                     </div>
 
                     <div className="buttons">
-                        <input className="isBusy" type="checkbox" name="" id="form-checkbox" checked={!isBusy} onChange={(e) => handleInput(e, 'isBusy')}></input>
                         <button className="btnScooter" onClick={handleEdit}>Save</button>
                         <button className="btnScooter" onClick={handleCancel}>Cancel</button>
                     </div>
