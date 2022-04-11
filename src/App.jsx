@@ -93,10 +93,8 @@ function App() {
     koltCopy.forEach((el, i) => {
       if(el.id === modal) {
         koltCopy[i].isBusy = data.isBusy;
-        koltCopy[i].date = data.date;
-        koltCopy[i].distance = data.distance;
-        koltCopy[i].newDate = data.newDate;  //!!!!!!!!!
-        koltCopy[i].newDistance = data.newDistance;  //!!!!!!!!!
+        koltCopy[i].date = data.newDate;
+        koltCopy[i].distance = parseFloat(data.distance) + parseFloat(data.newDistance);
       }
     });
     localStorage.setItem('kolt', JSON.stringify(koltCopy));
@@ -105,10 +103,8 @@ function App() {
       e.forEach((el, i) => {
         if(el.id === modal) {
           e[i].isBusy = data.isBusy;
-          e[i].date = data.date;
-          e[i].distance = data.distance;
-          e[i].newDate = data.newDate;  //!!!!!!!!!
-          e[i].newDistance = data.newDistance;  //!!!!!!!!!
+          e[i].date = data.newDate;
+          e[i].distance = parseFloat(data.distance) + parseFloat(data.newDistance);
         }
       });
       return e;

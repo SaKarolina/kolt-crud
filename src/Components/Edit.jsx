@@ -29,7 +29,7 @@ function Edit ({edit, scooter, cancel}) {
             date: date,
             newDate: newDate,  //!!!!!!!!!
             distance: distance,
-            newDistance: newDistance, //!!!!!!!
+            newDistance: newDistance,
             isBusy: isBusy
         }
         edit(data);
