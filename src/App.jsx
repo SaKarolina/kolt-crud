@@ -6,6 +6,7 @@ import './crud.scss';
 import Edit from './Components/Edit';
 import getNewId from './Common/id';
 import Statistics from './Components/Statistics';
+import Sort from './Components/Sort';
 
 function App() {
 
@@ -93,7 +94,7 @@ function App() {
       <div className='app-container'>
         <div className='content'>
           <Create create={create}></Create>
-          <div className='create'>sort</div>
+          <Sort kolt={kolt}></Sort>
           <Read kolt={kolt} deleteScooter={deleteScooter} show={show}></Read>
           <Statistics kolt={kolt}></Statistics>
         </div>
