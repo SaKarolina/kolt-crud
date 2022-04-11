@@ -35,6 +35,44 @@ function App() {
     return kolt.filter(sc => sc.id === modal)[0];
   }
 
+  const handleDateSort = (d) => {
+    switch(d.detail) {
+      case 1:
+        const sortByDate = [...kolt].sort((a, b) => b.date.localeCompare(a.date))
+        setKolt(sortByDate);
+        break;
+      case 2:  //2 suveikia tik su double clicku
+        const sortByDate2 = [...kolt].sort((a, b) => a.date.localeCompare(b.date))
+        setKolt(sortByDate2);
+        break;
+      default:
+    }
+  }
+
+  const handleDistSort = (d) => {
+    switch(d.detail) {
+      case 1:
+        const sortByDist = [...kolt].sort((a, b) => b.distance - a.distance)
+        setKolt(sortByDist);
+        break;
+      case 2:  //2 suveikia tik su double clicku
+        const sortByDist2 = [...kolt].sort((a, b) => a.distance - b.distance)
+        setKolt(sortByDist2);
+        break;
+      default:
+    }
+  }
+
+  // const handleDateSort = () => {
+  //   const sortByDate = [...kolt].sort((a, b) => b.date.localeCompare(a.date))
+  //   setKolt(sortByDate); //!!!!!!!!!TOGGLE
+  // }
+
+  // const handleDistSort = () => {
+  //   const sortByDist = [...kolt].sort((a, b) => b.distance -a.distance)
+  //   setKolt(sortByDist); //!!!!!!!!!TOGGLE
+  // }
+
   const create = data => {
     const scooter = {
       id: getNewId(),
@@ -94,7 +132,7 @@ function App() {
       <div className='app-container'>
         <div className='content'>
           <Create create={create}></Create>
-          <Sort kolt={kolt}></Sort>
+          <Sort handleDateSort={handleDateSort} handleDistSort={handleDistSort}></Sort>
           <Read kolt={kolt} deleteScooter={deleteScooter} show={show}></Read>
           <Statistics kolt={kolt}></Statistics>
         </div>

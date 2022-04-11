@@ -1,12 +1,4 @@
-function Sort ({kolt}) {
-
-    const handleDateSort = () => {
-        kolt.sort((a, b) => b.date - a.date)
-    }
-
-    const handleDistSort = () => {
-        
-    }
+function Sort ({handleDateSort, handleDistSort}) {
 
     return (
         <div className="btns-sort">
