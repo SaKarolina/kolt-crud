@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/kolt-crud/static/css/main.2f6b6ca2.css",
-    "main.js": "/kolt-crud/static/js/main.f8c0047d.js",
+    "main.js": "/kolt-crud/static/js/main.9816cb82.js",
     "static/js/787.ad4f4dcc.chunk.js": "/kolt-crud/static/js/787.ad4f4dcc.chunk.js",
     "static/media/okai-vehicles-vNuRh8jOtXA-unsplash.jpg": "/kolt-crud/static/media/okai-vehicles-vNuRh8jOtXA-unsplash.37d74711e352b60b26bd.jpg",
     "index.html": "/kolt-crud/index.html",
     "main.2f6b6ca2.css.map": "/kolt-crud/static/css/main.2f6b6ca2.css.map",
-    "main.f8c0047d.js.map": "/kolt-crud/static/js/main.f8c0047d.js.map",
+    "main.9816cb82.js.map": "/kolt-crud/static/js/main.9816cb82.js.map",
     "787.ad4f4dcc.chunk.js.map": "/kolt-crud/static/js/787.ad4f4dcc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2f6b6ca2.css",
-    "static/js/main.f8c0047d.js"
+    "static/js/main.9816cb82.js"
   ]
 }
