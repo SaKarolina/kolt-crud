@@ -3,7 +3,7 @@
 ![Eco Status](https://img.shields.io/badge/ECO-Friendly-green.svg)
 ![Pet Status](https://img.shields.io/badge/Pet-Friendly-green) 
 
-# kolt-crud
+# "Kolt" scooters - crud
 
 _33 group individual homework project_
 
@@ -18,6 +18,7 @@ Design: Created by myself.
 -   Modal
 -   Responsive design
 -   Sort by date & distance
+-   Local Storage (without DB or API)
 
 ## Author
 
